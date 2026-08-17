@@ -97,6 +97,18 @@ Your app talks to a single endpoint. 4SAPI handles routing, provider auth, and f
 - [Operating Instructions](https://4sapi.apifox.cn/8181987m0)
 - [Website](https://4sapi.com)
 - [Blog](https://4sapi.com/blog)
+- [llms.txt](./llms.txt) — machine-readable index of all guides in this repo, for AI assistants and crawlers
+
+---
+
+## About 4SAPI
+
+4SAPI is a unified LLM API gateway: one OpenAI-compatible endpoint that routes to OpenAI, Anthropic Claude, Google Gemini, DeepSeek, Qwen, and other major providers. This repository, `4sapi-docs`, hosts the team's practical guides — client integration walkthroughs, coding-agent workflows, troubleshooting runbooks, and enterprise governance practices — all built around 4SAPI as the routing layer.
+
+**Contact & Community**
+- Website: [4sapi.com](https://4sapi.com)
+- Blog: [4sapi.com/blog](https://4sapi.com/blog)
+- Issues & questions: [open a GitHub issue](https://github.com/4sapi/4sapi-docs/issues)
 
 ---
 
