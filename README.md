@@ -1,21 +1,34 @@
-README.md
-<img width="1465" height="802" alt="image" src="https://github.com/user-attachments/assets/ab88ac3e-9ae1-457a-b943-9d08408efdb3" />
-<h1 align="center">
-4SAPI
-</h1>
-<div align="center">  
-Build, test, and scale AI applications with simplified model integration, flexible routing, and efficient API management.
+<div align="center">
 
-Website:[4sapi.com](https://4sapi.com)
+# 4SAPI — Unified LLM API Gateway
+
+**One API key, one endpoint, every major LLM provider.**
+
+<br />
+
+[![Star this repo](https://img.shields.io/github/stars/4sapi/4sapi-docs?style=for-the-badge&logo=github&label=%E2%AD%90%20Star%20this%20repo&color=yellow)](https://github.com/4sapi/4sapi-docs/stargazers)
+
+<br />
+
+[![Website](https://img.shields.io/badge/Website-4sapi.com-blue?style=for-the-badge)](https://4sapi.com)
+&nbsp;
+[![Blog](https://img.shields.io/badge/Blog-4sapi.com%2Fblog-orange?style=for-the-badge)](https://4sapi.com/blog)
+&nbsp;
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen?style=for-the-badge)](https://github.com/4sapi/4sapi-docs/pulls)
+
+---
+
+Switching between OpenAI, Claude, Gemini, DeepSeek, and Qwen usually means rewriting your integration for every provider's SDK and auth scheme. 4SAPI removes that work: one OpenAI-compatible endpoint routes to any supported model, so you keep your existing code and just change the model name.
+
+[Quick Start](#quick-start) | [How It Works](#how-it-works) | [Supported Models](#supported-models) | [Docs](#learn-more)
+
 </div>
 
-## Integrate AI Models in Minutes
+---
 
-Use one API endpoint to connect with multiple LLM providers.
+## Quick Start
 
-Compatible with OpenAI API format, making it easy to migrate existing applications without rewriting your code.
-
-Example:
+Point your existing OpenAI client at the 4SAPI endpoint and swap in your API key. That's it.
 
 ```python
 from openai import OpenAI
@@ -28,59 +41,81 @@ client = OpenAI(
 response = client.chat.completions.create(
     model="gpt-5.6",
     messages=[
-        {
-            "role": "user",
-            "content": "Hello, 4SAPI!"
-        }
+        {"role": "user", "content": "Hello, 4SAPI!"}
     ]
 )
 
 print(response.choices[0].message.content)
 ```
 
----
-
-## Why integrate 4SAPI?
-
-One API endpoint for multiple AI models.
-
-• Unified access to leading LLM providers
-
-• OpenAI-compatible API interface
-
-• Simplified model switching and management
-
-• Reduce development and maintenance costs
-
-• Flexible model routing for different workloads
-
-• Centralized API usage management
-
-• Support AI application development at scale
+No new SDK, no new auth flow, no rewritten request bodies.
 
 ---
 
-## Multi-Model API Gateway
+## How It Works
 
-Connect multiple AI models through a unified interface.
+```
+Your App (OpenAI SDK)
+        |
+        v
+  4SAPI Gateway  --->  OpenAI
+        |         --->  Claude
+        |         --->  Gemini
+        |         --->  DeepSeek
+        +-------->  Qwen
+```
 
-Developers can integrate different models without maintaining separate API implementations.
-
-Supported model ecosystems include:
-
-• OpenAI models
-
-• Claude models
-
-• Gemini models
-
-• DeepSeek models
-
-• Qwen models
-
-• Other popular LLM providers
+Your app talks to a single endpoint. 4SAPI handles routing, provider auth, and format translation behind the scenes.
 
 ---
 
-## Learn more
-[Operating Instructions](https://4sapi.apifox.cn/8181987m0)
+## Why Teams Use 4SAPI
+
+| Problem | 4SAPI's Answer |
+|---|---|
+| Different SDKs per provider | One OpenAI-compatible interface for all of them |
+| Vendor lock-in | Swap models by changing a string, not your codebase |
+| Managing multiple API keys | Centralized key and usage management |
+| Picking the right model per task | Flexible routing across workloads |
+| Scaling AI features across a team | Built for production-scale usage |
+
+---
+
+## Supported Models
+
+- OpenAI (GPT family)
+- Anthropic Claude
+- Google Gemini
+- DeepSeek
+- Qwen
+- Other popular LLM providers
+
+---
+
+## Learn More
+
+- [Operating Instructions](https://4sapi.apifox.cn/8181987m0)
+- [Website](https://4sapi.com)
+- [Blog](https://4sapi.com/blog)
+
+---
+
+## Contributing
+
+Found an error in the docs or have an example to add? PRs are welcome — open one and we'll take a look.
+
+---
+
+<div align="center">
+
+---
+
+**Built by 4SAPI Team** | [Website](https://4sapi.com) | [Blog](https://4sapi.com/blog)
+
+<br />
+
+**If this is useful to you:**
+
+[![Star this repo](https://img.shields.io/github/stars/4sapi/4sapi-docs?style=for-the-badge&logo=github&label=%E2%AD%90%20Star%20this%20repo&color=yellow)](https://github.com/4sapi/4sapi-docs/stargazers)
+
+</div>
