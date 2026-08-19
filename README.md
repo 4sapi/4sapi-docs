@@ -1,5 +1,7 @@
 <div align="center">
 
+<img src="image/logo.png" alt="4SAPI Logo" width="110" />
+
 # 4SAPI — Unified LLM API Gateway
 
 **One API key, one endpoint, every major LLM provider.**
@@ -58,7 +60,7 @@ No new SDK, no new auth flow, no rewritten request bodies.
 Your App (OpenAI SDK)
         |
         v
-  4SAPI Gateway  --->  OpenAI
+  4SAPI Gateway   --->  OpenAI
         |         --->  Claude
         |         --->  Gemini
         |         --->  DeepSeek
@@ -116,14 +118,11 @@ Your app talks to a single endpoint. 4SAPI handles routing, provider auth, and f
 
 Found an error in the docs or have an example to add? PRs are welcome — open one and we'll take a look.
 
----
-
 <div align="center">
 
 ---
 
 **Built by 4SAPI Team** | [Website](https://4sapi.com) | [Blog](https://4sapi.com/blog)
-
 <br />
 
 **If this is useful to you:**
